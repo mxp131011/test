@@ -7,6 +7,7 @@
 <script setup>
     import { shallowReactive } from 'vue';
     import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+
     const config = shallowReactive({
         autoInsertSpace: true
     });
