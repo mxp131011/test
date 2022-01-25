@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "智联T9",
+            "request": "launch",
+            "type": "vscode-edge-devtools.debug",
+            "url": "http://localhost:3000/zlt9_erp/" // Provide your project's url to finish configuring
+        }
+    ]
+}
