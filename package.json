@@ -3,35 +3,21 @@
   "title": "智联T9",
   "version": "0.1.0",
   "private": true,
-  "author": "马小平",
-  "description": "这是一个手机进销存的管理系统,仅供《重庆智联T9软件有限公司》及其该公司用户使用",
-  "keywords": [
-    "智联T9",
-    "zlt9",
-    "ERP",
-    "手机",
-    "分销",
-    "管理软件",
-    "精细化管理",
-    "手机进销存"
-  ],
-  "copyright": "重庆智联T9软件有限公司",
+  "author": "Mr.Ma",
+  "copyright": "",
   "license": "private",
   "scripts": {
     "dev": "vite serve --host",
     " install": "yarn install"
   },
   "dependencies": {
-    "vue": "^3.2.29",
-    "vue-router": "^4.0.12"
+    "vue": "^3.2.29"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.1.0",
     "@vue/compiler-sfc": "^3.2.29",
     "vite": "^2.7.13",
     "vite-plugin-html": "^3.0.2"
-  },
-  "resolutions": {
-    "bin-wrapper": "npm:bin-wrapper-china"
   }
+
 }
