@@ -5,6 +5,6 @@
 <script setup>
     import { shallowReactive } from 'vue';
     const config = shallowReactive({
-        aaa: 'aaaa'
+        aaa: 'asaaa'
     });
 </script>
