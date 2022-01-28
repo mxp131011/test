@@ -4,6 +4,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig((command) => {
     const isBuild = Boolean(command.mode === 'production');
+  
     return {
         base: '/zlt9_erp/',
         plugins: [
