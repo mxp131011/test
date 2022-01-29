@@ -7,7 +7,7 @@ export const useRouterStore = defineStore('router', {
     state: () => ({
         tabViews: [], // 显示的路由 【会持久化保存】
         // 路由白名单 （不重定向，不在菜单和导航栏显示） 【建议在errorPageList的每页item加上meta.noCache=true】
-        whiteListRoutes: ['login', 'err403', 'err404'].map((item) => item.toLowerCase())
+        whiteListRoutes: ['/login', '/err403', '/err404'].map((item) => item.toLowerCase())
     }),
     getters: {
         cachedRouteName: (state) => state.tabViews.filter((view) => Boolean(!view.meta || !view.meta.noCache)).map((item) => item.name)
