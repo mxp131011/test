@@ -1,0 +1,202 @@
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    font-size: 14px;
+}
+
+html,
+body,
+a,
+header,
+textarea,
+span,
+input,
+button,
+ul,
+li,
+i,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+p,
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: $scrollbar-bar;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: $scrollbar-bar;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.302);
+}
+
+:focus {
+    outline: none;
+}
+
+// 最顶部页面切换时的加载进度条的颜色
+#nprogress .bar {
+    background: #04fa87 !important; //自定义颜色
+}
+
+
+// 禁止选中（鼠标指针样式）
+.global-not-allowed {
+    cursor: not-allowed;
+}
+
+// 输入框右边下拉筛选自定义宽度
+.global-select-input-custom-width {
+    .el-input-group__prepend {
+        padding: 0px;
+
+        .el-select {
+            height: 22px;
+            margin: 0px;
+            line-height: 22px;
+
+            .el-input__inner {
+                padding: 0px 6px !important;
+                padding-right: 20px !important;
+            }
+
+            .el-input__suffix {
+                right: 4px;
+            }
+
+            .el-icon {
+                height: 22px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+// 设置 form-item 宽度固定为250
+.global-el-form-flex {
+    @include flex(row,wrap, flex-start,center,center);
+    margin-right: -32px;
+
+    .el-form-item{
+        flex: 1;
+        min-width: 268px;
+        margin-bottom: 4px;
+
+        .el-select {
+            width: 100%;
+        }
+    }
+}
+
+// 强制改变单选和多选【禁用】且【选中】时的样式（样式变为选中时的样式，但还是不可点击，只是样式变了）
+.global-disabled-checked {
+    &.el-radio {
+        &.is-bordered.is-checked.is-disabled {
+            border-color: var(--el-color-primary);
+        }
+
+        .el-radio__input.is-checked.is-disabled .el-radio__inner {
+            background: var(--el-color-primary);
+            border-color: var(--el-color-primary);
+        }
+
+        .el-radio__input.is-checked.is-disabled .el-radio__inner:after {
+            background-color: var(--el-color-white);
+        }
+
+        .el-radio__input.is-checked.is-disabled + .el-radio__label {
+            color: var(--el-color-primary);
+        }
+    }
+
+    &.el-checkbox {
+        &.is-bordered.is-checked.is-disabled {
+            border-color: var(--el-color-primary);
+        }
+
+        .el-checkbox__input.is-checked.is-disabled .el-checkbox__inner {
+            background: var(--el-color-primary);
+            border-color: var(--el-color-primary);
+        }
+
+        .el-checkbox__input.is-checked.is-disabled .el-checkbox__inner:after {
+            border-color: var(--el-checkbox-checked-icon-color);
+        }
+
+        .el-checkbox__input.is-checked.is-disabled + .el-checkbox__label {
+            color: var(--el-color-primary);
+        }
+    }
+}
+
+// el-input 里面包含el-checkbox时（前缀包含el-checkbox）
+.global-input-checkbox {
+    .el-input-group__prepend {
+        padding: 0 6px;
+        padding-right: 7px;
+
+        .el-checkbox {
+            color: #999999;
+
+            &.el-checkbox--small {
+                height: 22px;
+            }
+
+            .el-checkbox__label {
+                padding-left: 4px;
+            }
+        }
+    }
+}
+// 表格容器 （主要用于监听高度变化）
+.global-table-box {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

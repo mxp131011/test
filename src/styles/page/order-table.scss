@@ -1,0 +1,98 @@
+
+
+/**
+ * 表格里面的input
+ **/
+.table-input {
+    height: 100%;
+    border: none;
+
+    :deep() {
+
+        .el-input__inner,
+        .el-textarea__inner {
+            padding: 0;
+            background: rgba(0, 0, 0, 0);
+            border-color: rgba(0, 0, 0, 0);
+        }
+    }
+}
+
+/**
+ * 统计
+ **/
+
+.header-name {
+    display: block;
+}
+
+.header-total {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    color: #f23c3c;
+}
+
+
+/**
+ * 表格中多项展示
+ **/
+
+.detailed-information-vessel {
+    @include flex(row, nowrap, space-between, center, center);
+    padding: 2px 4px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    color: $success;
+    background: $success-bg;
+    border: 1px solid $success-border;
+    border-radius: 3px;
+
+    .details-box {
+        line-height: 13px;
+
+        .name {
+            display: block;
+            padding: 2px;
+            font-weight: bolder;
+
+            .thin{
+                margin-left: 4px;
+                font-weight: normal;
+            }
+        }
+
+        .text {
+            display: block;
+            padding: 2px;
+        }
+
+        .text-box {
+
+            @include flex(row, nowrap, flex-start, center, center);
+
+            .text {
+                display: block;
+                flex: 1;
+                padding: 2px;
+            }
+        }
+    }
+
+    .close {
+        margin-left: 4px;
+        border-radius: 50%;
+
+        &:hover {
+            color: $err-bg-hover;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.del-table-item-box{
+    @include flex( column, nowrap, center, center, center);
+}

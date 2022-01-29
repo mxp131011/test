@@ -1,0 +1,81 @@
+.tabs-view-box {
+    @include flex(row, nowrap, flex-start, center, center);
+
+    .tabs-box {
+        @include flex(row, nowrap, space-between, center, center);
+        flex: 1;
+    }
+}
+
+.el-tabs {
+    width: 100%;
+    height: $tabs-view-height !important;
+
+    :deep() {
+        .is-scrollable {
+
+            .el-tabs__nav-prev,
+            .el-tabs__nav-next {
+                height: $tabs-view-height !important;
+                line-height: $tabs-view-height !important;
+            }
+        }
+
+        .el-tabs__header {
+            margin: 0;
+            border-bottom: none !important;
+
+            .el-tabs__nav {
+                border: none;
+            }
+        }
+
+        .el-tabs__item {
+            position: relative;
+            box-sizing: content-box;
+            display: inline-block;
+            height: $tabs-view-height !important;
+            padding: 0 20px;
+            margin-right: -18px;
+            font-size: 14px;
+            line-height: $tabs-view-height !important;
+            color: $color-66;
+            cursor: pointer;
+            border-bottom: none !important;
+            border-left: none !important;
+            outline: none;
+            transition: all 0.3s linear !important;
+            -webkit-mask-image: url('@/assets/image/tabs/tab-bg.png');
+            mask-image: url('@/assets/image/tabs/tab-bg.png');
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+
+            &:hover {
+                padding: 0 24px !important;
+                color: $menu-hover-text;
+                background: $menu-hover-bg;
+            }
+
+            &.is-active {
+                padding: 0 28px !important;
+                color: $menu-active-text;
+                background: $menu-active-bg;
+              
+
+                &:hover {
+                    color: $menu-active-text;
+                    background: $menu-active-bg;
+                }
+            }
+        }
+    }
+
+    .tabs-view-item {
+        display: inline-block;
+        width: auto;
+
+        .icon {
+            margin-right: 2px;
+        }
+    }
+}

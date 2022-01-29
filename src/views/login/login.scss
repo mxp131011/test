@@ -1,0 +1,224 @@
+$item-height: 50px;
+
+
+.login-page {
+    @include flex(row, nowrap, center, center, stretch);
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-box {
+    @include flex(column, nowrap, center, center, center);
+    flex: 9;
+    padding: 20px;
+}
+
+.bg-box {
+    @include flex(column, nowrap, center, center, stretch);
+    position: relative;
+    flex: 10;
+    height: 100vh;
+    overflow: hidden;
+
+    .bg-img-box{
+        position: absolute;
+        left: 0px;
+        z-index: -100;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        .bg-img{
+            position: relative;
+            top: -1vh;
+            width: 100%;
+            height: 102vh;
+            object-fit: cover;
+            object-position: right;
+        }
+    }
+
+
+    .inbetweening-img {
+        width: 100%;
+        -webkit-user-drag: none;
+    }
+}
+
+
+/*
+ * 登录表单
+ */
+.login-form {
+    @include flex(column, nowrap, center, center, center);
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+
+    .logo-box {
+        @include flex(column, nowrap, center, center, center);
+        width: 100%;
+        max-width: 500px;
+
+        .logo-img {
+            width: 200px;
+        }
+    }
+
+    .login-btn {
+        display: inherit;
+        width: 100%;
+        height: $item-height;
+        margin-top: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 25px;
+
+        &:hover {
+            opacity: 90%;
+        }
+    }
+
+
+    :deep(.el-form-item){
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 0;
+        color: #333333;
+
+        .el-input__prefix {
+            @include flex(column, nowrap, center, center, stretch);
+            height: $item-height;
+        }
+
+        .el-input {
+            line-height: $item-height;
+
+            .el-input__inner {
+                height: $item-height;
+                padding: 0 40px;
+                border-radius: 25px;
+            }
+
+            .el-input__prefix {
+                left: 12px;
+            }
+
+            .el-input__suffix {
+                @include flex(row, nowrap, center, center, center);
+                right: 12px;
+
+                .el-input__suffix-inner{
+                    @include flex(row, nowrap, center, center, center);
+                }
+
+                .el-icon{
+                    margin: 0px 4px;
+                    line-height: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+ * 流星动画
+ */
+.fixed-bg-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vh;
+    height: 100vh;
+    background: #ffffff;
+
+
+    .stars {
+
+        @keyframes star-opacity {
+
+            0% {
+                opacity: 0%;
+            }
+
+            40% {
+                opacity: 100%;
+            }
+
+            60% {
+                opacity: 100%;
+            }
+
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        @keyframes star-opacity {
+
+            0% {
+                opacity: 0%;
+            }
+
+            40% {
+                opacity: 100%;
+            }
+
+            60% {
+                opacity: 100%;
+            }
+
+            100% {
+                opacity: 0%;
+            }
+        }
+
+
+        @keyframes star-pos {
+
+            0% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+            }
+        }
+        height: 0;
+
+        .star {
+            position: relative;
+            top: 30px;
+            right: 100px;
+            z-index: 2;
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: rgb(14 23 233 / 100%);
+            border-radius: 50%;
+            -webkit-box-shadow: 0 0 5px 5px rgb(14 23 233 / 30%);
+            box-shadow: 0 0 5px 5px rgb(14 23 233 / 30%);
+            opacity: 0%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+
+            &:after {
+                top: 0;
+                left: 4px;
+                display: block;
+                content: '';
+                border: 0 solid rgb(14 23 233 / 100%);
+                border-color: transparent transparent transparent rgb(14 23 233 / 30%);
+                border-width: 0 90px 2px;
+                box-shadow: 0 0 1px 0 rgb(14 23 233 / 10%);
+                transform: rotate(-45deg) translate3d(1px, 3px, 0);
+                transform-origin: 0% 100%;
+            }
+        }
+    }
+}
