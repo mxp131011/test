@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta content="<%- APP_KEYWORDS %>" name="keywords" />
-        <link rel="icon" href="/assets/img/favicon.ico" />
-        <meta content="<%- APP_AUTHOR %>" name="author" />
-        <link href="/assets/css/loading.css" rel="stylesheet" />
-        <title><%- APP_TITLE %></title>
-        <script src="/assets/js/baseUrlConfig.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <div class="first-loading-wrp">
-                <div class="loading-wrp">
-                    <span class="dot dot-spin">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </span>
-                </div>
-                <div>
-                    <h2>欢迎使用 —— <%- APP_TITLE %></h2>
-                </div>
-            </div>
-        </div>
-        <script type="module" src="/src/main.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ymadmin</title>
+  <style>
+    #app,html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
